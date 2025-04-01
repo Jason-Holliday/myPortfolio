@@ -160,6 +160,6 @@ app.get("/", (req, res) => {
 const port = process.env.PORT || 3000; 
 
 // Server starten
-app.listen(port, function () {
+app.listen(port, "0.0.0.0", function () {
     console.log(`Server läuft auf Port ${port}`);
 });
