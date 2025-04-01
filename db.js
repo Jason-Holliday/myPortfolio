@@ -4,13 +4,13 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 // Überprüfe, ob alle benötigten Umgebungsvariablen gesetzt sind
-const requiredEnv = ["MYSQL_HOST", "MYSQL_USER", "MYSQL_PASSWORD", "MYSQL_DATABASE"];
-requiredEnv.forEach(envVar => {
-    if (!process.env[envVar]) {
-        console.error(`❌ Fehler: ${envVar} ist nicht in der .env-Datei gesetzt!`);
-        process.exit(1);
-    }
-});
+// const requiredEnv = ["MYSQL_HOST", "MYSQL_USER", "MYSQL_PASSWORD", "MYSQL_DATABASE"];
+// requiredEnv.forEach(envVar => {
+//     if (!process.env[envVar]) {
+//         console.error(`❌ Fehler: ${envVar} ist nicht in der .env-Datei gesetzt!`);
+//         process.exit(1);
+//     }
+// });
 
 // Erstelle die DB-Verbindung
 const createDBConnection = async () => {
