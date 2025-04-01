@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
             statusText.textContent = "Lade hoch...";
             uploadBtn.disabled = true;
 
-            const response = await fetch("http://localhost:3000/upload", {
+            const response = await fetch("https://myportfolio-jason-holliday.up.railway.app/upload", {
                 method: "POST",
                 body: formData,
             });
@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         try {
-            const response = await fetch("http://localhost:3000/save-project", {
+            const response = await fetch("https://myportfolio-jason-holliday.up.railway.app/save-project", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ title, description, imgUrl, techUsed, githubUrl, liveDemoLink })
@@ -131,7 +131,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         try {
-            const response = await fetch(`http://localhost:3000/projects?search=${encodeURIComponent(searchTerm)}`, {
+            const response = await fetch(`https://myportfolio-jason-holliday.up.railway.app/projects?search=${encodeURIComponent(searchTerm)}`, {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
@@ -216,7 +216,7 @@ document.addEventListener("DOMContentLoaded", function () {
         };
 
         try {
-            const response = await fetch(`http://localhost:3000/projects/${projectId}`, {
+            const response = await fetch(`https://myportfolio-jason-holliday.up.railway.app/projects/${projectId}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -241,7 +241,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!confirmDelete) return;
 
         try {
-            const response = await fetch(`http://localhost:3000/projects/${projectId}`, {
+            const response = await fetch(`https://myportfolio-jason-holliday.up.railway.app/projects/${projectId}`, {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json',
