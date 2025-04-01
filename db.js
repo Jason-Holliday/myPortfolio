@@ -3,8 +3,6 @@ const dotenv = require('dotenv');
 
 dotenv.config();
 
-const connection = mysql.createConnection(process.env.DATABASE_URL);
-
 let dbConnection; // Globale Variable für die Verbindung
 
 // DB-Verbindung initialisieren (nur einmal)
