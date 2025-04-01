@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projektverwaltung</title>
+    <link rel="stylesheet" href="adminStyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="addProjects-container">
+        <h1>Projektverwaltung</h1>
+        
+        <!-- Tabs - Reiter -->
+        <div class="tabs-container">
+            <button class="tab active">Projekt hinzufügen</button>
+            <button class="tab">Projekt bearbeiten</button>
+        </div>
+
+        <!-- Formular - Projekt hinzufügen -->
+        <div class="tab-content active">
+            <h2>Projekt hinzufügen</h2>
+            <form id="add-project-form">
+                <!-- Titel Input -->
+                <div class="form-group">
+                    <label for="title">Titel des Projekts</label>
+                    <input type="text" id="title" placeholder="Titel eingeben">
+                </div>
+        
+                <!-- Beschreibung Input -->
+                <div class="form-group">
+                    <label for="description">Beschreibung des Projekts</label>
+                    <textarea id="description" rows="4" placeholder="Beschreibung eingeben"></textarea>
+                </div>
+        
+                <!-- Datei Upload -->
+                <div class="form-group">
+                    <label for="image-upload">Projektbild hochladen</label>
+                    <input type="file" id="image-upload" accept="image/*">
+                    <img id="image-preview" style="display: none; max-width: 200px; margin-top: 10px;" />
+                    <p id="status"></p>
+                    <button type="button" id="upload-btn" disabled>Hochladen</button>
+                </div>
+        
+                <!-- Bild URL -->
+                <div class="form-group">
+                    <label for="img-url">Bild URL</label>
+                    <input type="url" id="img-url" placeholder="Bild URL wird hier gespeichert" readonly>
+                </div>
+        
+                <!-- GitHub REPO URL -->
+                <div class="form-group">
+                    <label for="github-url">GitHub REPO URL</label>
+                    <input type="url" id="github-url" placeholder="GitHub Repo URL eingeben">
+                </div>
+        
+                <!-- GitHub Page Link -->
+                <div class="form-group">
+                    <label for="live-demo-link">Live Demo</label>
+                    <input type="url" id="live-demo-link" placeholder="Live Demo Link eingeben">
+                </div>
+        
+                <!-- Checkboxen für Technologien -->
+                <div class="form-group">
+                    <label>Verwendete Technologien</label>
+                    <div class="checkbox-grid">
+                        <label><input type="checkbox" name="tech" value="HTML5"> HTML5</label>
+                        <label><input type="checkbox" name="tech" value="CSS3"> CSS3</label>
+                        <label><input type="checkbox" name="tech" value="JavaScript"> JavaScript</label>
+                        <label><input type="checkbox" name="tech" value="React"> React</label>
+                        <label><input type="checkbox" name="tech" value="Node.js"> Node.js</label>
+                        <label><input type="checkbox" name="tech" value="Angular"> Angular</label>
+                    </div>
+                </div>
+        
+                <!-- Speichern Button -->
+                <button type="submit" class="save-button">Projekt hinzufügen</button>
+            </form>
+        </div>
+        
+
+        <!-- Formular - Projekt bearbeiten -->
+        <div class="tab-content">
+            <h2>Projekt bearbeiten</h2>
+
+            <!-- Projekt suchen -->
+            <div class="form-group">
+                <label for="search-project">Projekt suchen</label>
+                <input type="text" id="search-project" placeholder="Projektnamen eingeben..." >
+            </div>
+
+            <!-- Formular zur Bearbeitung - Nur sichtbar wenn ein Projekt gefunden wurde -->
+            <form id="edit-form" style="display: none;">
+                <!-- Titel Input -->
+                <div class="form-group">
+                    <label for="edit-title">Titel des Projekts</label>
+                    <input type="text" id="edit-title" placeholder="Titel des Projekts bearbeiten">
+                </div>
+
+                <!-- Beschreibung Input -->
+                <div class="form-group">
+                    <label for="edit-description">Beschreibung des Projekts</label>
+                    <textarea id="edit-description" rows="4" placeholder="Beschreibung des Projekts bearbeiten"></textarea>
+                </div>
+
+                <!-- URL Bild Input -->
+                <div class="form-group">
+                    <label for="edit-image-url">URL des Bildes</label>
+                    <input type="url" id="edit-image-url" placeholder="URL des Bildes bearbeiten" onchange="uploadImage()">
+                </div>
+
+                <!-- URL GitHub Input -->
+                <div class="form-group">
+                    <label for="edit-github-url">GitHub URL</label>
+                    <input type="url" id="edit-github-url" placeholder="GitHub URL bearbeiten">
+                </div>
+
+                <!-- Speichern Button -->
+                <button type="submit" class="save-button">Projekt aktualisieren</button>
+            </form>
+
+            <!-- Anzeige von Fehlermeldung, falls kein Projekt gefunden wurde -->
+            <div id="no-project-found" style="display: none;">
+                <p>Kein Projekt gefunden. Bitte versuche es mit einem anderen Namen.</p>
+            </div>
+
+            <!-- Container für die Projektergebnisse -->
+            <div id="project-list"></div>
+        </div>
+    </div>
+
+
+
+    <script src="adminScript.js"></script>
+</body>
+</html>

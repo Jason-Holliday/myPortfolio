@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Mein Portfolio | Jason Holliday</title>
+</head>
+<body>
+    <header class="header">
+        <nav class="navigation">
+
+            <a href="#home" class="logo"><span>Jason Holliday</span></a>
+
+            <ul class="navLinks">
+                <li><a href="#home" class="active">Startseite</a></li>
+                <li><a href="#about">Über mich</a></li>
+                <li><a href="#experience">Erfahrung</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projekte</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+            </ul>
+
+            <a href="javascript:void(0);" class="icon" onclick="toggleMenuBurger()">
+                <i class="fa-solid fa-bars" id="menuIcon"></i>
+            </a>
+            
+            <!-- <button class="visitBtn">GitHub</button> -->
+            <a href="https://github.com/Jason-Holliday" role="button" class="visitBtn" target="_blank">GitHub</a>
+
+        </nav>
+    </header>
+
+    <section class="home" id="home">
+        <div class="homeContainer">
+            <div class="img-container">
+                <img src="images/Bewerbungsfoto.jpeg" alt="" class="profile-image">
+            </div>
+            <div class="infoBox">
+                <div class="text">
+                        <h1 class="heading">
+                            <span class="intro">Hi, ich bin</span>
+                            <span class="name">Jason Holliday</span>
+                        </h1>
+                    <h2 class="jobName">Frontend Entwickler</h2>
+                </div>
+
+                <div class="btnGroup">
+                    <button class="btn" id="open-modal">Kontakt</button>
+                </div>
+
+                <div class="socials">
+                    <a href="https://github.com/Jason-Holliday" target="_blank" aria-label="GitHub">
+                        <i class="fa-brands fa-github" title="GitHub" id="github-tooltip" role="tooltip"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/jason-holliday-24ab71338/" target="_blank" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin" title="LinkedIn" id="linkedin-tooltip" role="tooltip"></i>
+                    </a>
+                </div>                       
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="aboutContainer">
+            <div class="infoBox">
+                <div class="text">
+                    <h2 class="about-title">Über mich</h2>
+                </div>
+                <div class="aboutMe-Text">
+                    <p>
+                        Ich bin Frontend-Entwickler mit einer Spezialisierung auf Barrierefreiheit. <br>
+                        Besonders gerne arbeite ich an Landingpages und Web-Apps und setze dabei bevorzugt Angular und Node.js ein. <br> 
+                        Zu meinen Hobbys gehören die Zauberkunst, die ich auch nebenberuflich ausübe, sowie das Zeichnen.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="experience" id="experience">
+        <div class="experience-container">
+            <h2 class="section-title">Meine Erfahrung</h2>
+            <div class="experience-info">
+                <div class="grid">
+                    <div class="work-experience-container">
+                        <div class="work-experience-title-container">
+                            <h2 class="work-title">Berufserfahrung</h2>
+                        </div>
+                        <div class="grid-row">
+                            <div class="grid-card">
+                                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                                <h3>Nebenberuflich selbständig als Zauberkünstler</h3>
+                                <h4 class="current-date-range">03/2024 - heute</h4>
+                                <ul>
+                                    <li><i class="fa-solid fa-angle-right"></i>Kommunikation mit Kunden und Angebotserstellung für individuelle Shows</li>
+                                    <li><i class="fa-solid fa-angle-right"></i>Durchführung von Auftritten, Akquise und Pflege der Online-Präsenz</li>
+                                    <li><i class="fa-solid fa-angle-right"></i>Marketing und Networking</li>
+                                    <li><i class="fa-solid fa-angle-right"></i>Besuche meine Seite: <a href="https://www.jasonhollidaymagic.de" target="_blank" id="website" style="color: var(--cta-btn);"> www.jasonhollidaymagic.de</a></li>
+                                </ul>
+                            </div>
+                            <div class="grid-card">
+                                <i class="fa-solid fa-bug"></i>
+                                <h3>Junior Software Quality Engineer</h3>
+                                <h4 class="current-date-range">07/2023 - heute</h4>
+                                <ul>
+                                    <li><i class="fa-solid fa-angle-right"></i>Durchführung von Barrierefreiheitstests für Web- und Mobile-Anwendungen</li>
+                                    <li><i class="fa-solid fa-angle-right"></i>Verfassen von Fehlerberichten</li>
+                                    <li><i class="fa-solid fa-angle-right"></i>Spezifikationsbasiertes Testen</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="work-experience-container">
+                        <h2 class="work-title">Ausbildung</h2>
+                        <div class="grid-row">
+                            <div class="grid-card">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                                <h3>Fachinformatiker für Anwendungsentwicklung</h3>
+                                <h4 class="current-date-range">2020 – 2023</h4>
+                                <p>imbus AG, Möhrendorf</p>
+                            </div>
+                            <div class="grid-card">
+                                <i class="fa-solid fa-tools"></i>
+                                <h3>Zerspanungsmechaniker</h3>
+                                <h4 class="current-date-range">2015 – 2019</h4>
+                                <p>Forschner PTM GmbH, Mahlstetten</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="skills" id="skills">
+        <div class="skills-container">
+            
+            <h2 class="section-title">Meine Skills</h2>
+
+            <div class="skill-grid">
+                <div class="skill-card">
+                    <i class="fa-brands fa-html5"></i>
+                    <h3>HTML5</h3>
+                </div>
+
+                <div class="skill-card">
+                    <i class="fa-brands fa-css3-alt"></i>
+                    <h3>CSS3</h3>
+                </div>
+
+                <div class="skill-card">
+                    <i class="fa-brands fa-js"></i>
+                    <h3>JavaScript</h3>
+                </div>
+
+                <div class="skill-card">
+                    <i class="fa-brands fa-angular"></i>
+                    <h3>Angular</h3>
+                </div>
+
+                <div class="skill-card">
+                    <i class="fa-brands fa-vuejs"></i>
+                    <h3>Vue.js</h3>
+                </div>
+
+                <div class="skill-card">
+                    <i class="fa-brands fa-github"></i>
+                    <h3>GitHub</h3>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="projects" id="projects">
+        <div class="projects-container">
+            <h2 class="section-title">Aktuelle Projekte</h2>
+
+            <div class="project-grid" id="project-grid">
+                <!-- Wird dynamisch generiert -->
+             </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="input-box">
+            <h2 class="section-title">Kontakt</h2>
+    
+            <form action="#" id="contactForm" method="post" aria-labelledby="contact">
+                <div class="input">
+                    <!-- E-Mail Eingabe -->
+                    <label for="email">E-Mail:*</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        placeholder="beispiel@email.de" 
+                        required 
+                        aria-describedby="email" 
+                        aria-invalid="false"
+                        autocomplete="email">
+            
+                    <!-- Vorname Eingabe -->
+                    <label for="firstName">Vorname:*</label>
+                    <input 
+                        type="text" 
+                        id="firstName" 
+                        name="firstName" 
+                        placeholder="Vorname" 
+                        required 
+                        aria-describedby="Vorname" 
+                        aria-invalid="false"
+                        autocomplete="given-name">
+            
+                    <!-- Nachname Eingabe -->
+                    <label for="lastName">Nachname:*</label>
+                    <input 
+                        type="text" 
+                        id="lastName" 
+                        name="lastName" 
+                        placeholder="Nachname" 
+                        required 
+                        aria-describedby="Nachname" 
+                        aria-invalid="false"
+                        autocomplete="family-name">
+            
+                    <!-- Nachricht Eingabe -->
+                    <label for="message">Nachricht:*</label>
+                    <textarea 
+                        id="message" 
+                        name="message" 
+                        placeholder="Ihre Nachricht hier..." 
+                        required 
+                        aria-describedby="Nachricht" 
+                        aria-invalid="false"
+                        autocomplete="off"></textarea>
+                </div>
+            
+                <button class="btn" type="submit" aria-label="Absenden der Nachricht">Senden</button>
+            </form>
+        </div>
+    </section>
+    
+    
+
+    <footer>
+        <ul>
+            <li><a href="impressum.html">Impressum</a></li>
+        </ul>
+
+        <p class="copyright">Alle Rechte vorbehalten | Jason Holliday</p>
+
+    </footer>
+
+    <!-- KONTAKT MODAL  -->
+
+    <div class="modal" id="contact-modal" aria-hidden="true" role="dialog" aria-labelledby="modal-title">
+        <div class="modal-content">
+            <button id="close-modal" class="close-btn" aria-label="Schließen">✖</button>
+            <h2 class="section-title" id="modal-title">Kontakt</h2>
+            <form action="#" id="contactFormModal" method="post">
+                <div class="input">
+                    <label for="modal-email">E-Mail:*</label>
+                    <input type="email" id="modal-email" name="email" placeholder="beispiel@email.de" required autocomplete="email">
+            
+                    <label for="modal-firstName">Vorname:*</label>
+                    <input type="text" id="modal-firstName" name="firstName" placeholder="Vorname" required autocomplete="given-name">
+            
+                    <label for="modal-lastName">Nachname:*</label>
+                    <input type="text" id="modal-lastName" name="lastName" placeholder="Nachname" required autocomplete="family-name">
+            
+                    <label for="modal-message">Nachricht:*</label>
+                    <textarea id="modal-message" name="message" placeholder="Ihre Nachricht hier..." required autocomplete="off"></textarea>
+                </div>
+            
+                <button class="btn" type="submit">Senden</button>
+            </form>
+            
+        </div>
+    </div>
+    
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

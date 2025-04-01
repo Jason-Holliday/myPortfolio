@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+:root {
+    --primary-color: #2d3250;
+    --secondary-color: #42466b;
+    --text-color: #fff;
+    --cta-btn: #f7b375;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+    padding: 20px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+h1, h2, h3 {
+    color: var(--cta-btn);
+}
+
+.back-button {
+    background-color: var(--cta-btn);
+    color: var(--text-dark);
+    padding: .8rem 1.5rem;
+    border: none;
+    border-radius: 10rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    letter-spacing: 1px;
+}
+
+.back-button:hover, .back-button:focus {
+    background-color: var(--secondary-color);
+    border: solid 2px var(--cta-btn);
+    color: var(--cta-btn);
+    transform: scale(1.05);
+}
+
+.fas {
+    font-size: 1.2rem;
+}
+
+a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+p {
+    margin-bottom: 10px;
+}

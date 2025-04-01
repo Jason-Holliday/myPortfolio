@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Farbvariablen */
+:root {
+    --primary-color: #2d3250;
+    --secondary-color: #42466b;
+    --text-color: #fff;
+    --cta-btn: #f7b375;
+    --highlight-color: #f1a7a6; 
+    --btn-hover-color: #ffdd89;
+    --max-width: 1200px;
+}
+
+/* Allgemeine Einstellungen */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    font-size: 16px;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Container und Layout */
+.addProjects-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: var(--secondary-color);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Überschriften */
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: var(--cta-btn);
+}
+
+p {
+    font-size: 1rem;
+    margin: 10px 0 20px;
+    color: var(--text-color);
+}
+
+/* Tabs - Reiter */
+.tabs-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.tab {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px 4px 0 0;
+    transition: background-color 0.3s ease;
+}
+
+.tab.active {
+    background-color: var(--cta-btn);
+    color: #000;
+}
+
+.tab:hover {
+    background-color: var(--cta-btn);
+    color: #000;
+}
+
+/* Tab-Inhalte */
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Formularelemente */
+.checkbox-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 10px; 
+    margin-bottom: 20px; 
+}
+
+.checkbox-grid label {
+    display: flex;
+    align-items: center; 
+    gap: 5px; 
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 8px;
+    color: var(--text-color);
+}
+
+input[type="text"], 
+textarea, 
+input[type="url"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid var(--secondary-color);
+    border-radius: 4px;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+/* Placeholder-Stil */
+input::placeholder,
+textarea::placeholder {
+    color: #fff;
+    font-style: italic;
+}
+
+/* GitHub URL-Eingabefeld */
+#github-url {
+    margin-bottom: 10px;
+}
+
+/* Checkbox-Container */
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    appearance: none;
+    background-color: var(--secondary-color);
+    border: 2px solid var(--cta-btn);
+    border-radius: 4px;
+    position: relative;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+input[type="checkbox"]::before {
+    content: "✔";
+    color: var(--cta-btn);
+    font-size: 1rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.2s ease;
+}
+
+input[type="checkbox"]:checked::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+input[type="checkbox"]:focus {
+    outline: 2px solid var(--cta-btn);
+}
+
+textarea {
+    resize: none;
+}
+
+/* Button */
+.save-button,
+.add-button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    background-color: var(--cta-btn);
+    color: #000;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    letter-spacing: 1px;
+    margin-top: 1rem;
+}
+
+.delete-button{
+    display: block;
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    background-color: rgb(180, 22, 22);
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    letter-spacing: 1px;
+    margin-top: 1rem;    
+}
+
+.delete-button:hover{
+    background-color: rgb(110, 10, 10);
+    transform: translateY(-2px); 
+}
+
+
+.save-button:hover,
+.add-button:hover {
+    background-color: var(--highlight-color);
+    color: #fff;
+    transform: translateY(-2px);  
+}
+
+.save-button:active,
+.add-button:active,
+.delete-button:active {
+    transform: translateY(1px); 
+}
+
