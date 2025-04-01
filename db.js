@@ -3,29 +3,22 @@ const dotenv = require('dotenv');
 
 dotenv.config();
 
-// Überprüfe, ob alle benötigten Umgebungsvariablen gesetzt sind
-// const requiredEnv = ["MYSQL_HOST", "MYSQL_USER", "MYSQL_PASSWORD", "MYSQL_DATABASE"];
-// requiredEnv.forEach(envVar => {
-//     if (!process.env[envVar]) {
-//         console.error(`❌ Fehler: ${envVar} ist nicht in der .env-Datei gesetzt!`);
-//         process.exit(1);
-//     }
-// });
+const DATABASE_URL = process.env.DATABASE_URL;
 
 // Erstelle die DB-Verbindung
 const createDBConnection = async () => {
-    const db = await mysql.createPool({
-        host: process.env.MYSQL_HOST,
-        user: process.env.MYSQL_USER,
-        password: process.env.MYSQL_PASSWORD,
-        database: process.env.MYSQL_DATABASE,
-        port: process.env.MYSQL_PORT || 3306,
-        waitForConnections: true,
-        connectionLimit: 10,
-        queueLimit: 0
-    });
-    return db;
+    try {
+        const db = await mysql.createConnection(DATABASE_URL + "?ssl={" + JSON.stringify({
+            rejectUnauthorized: true
+        }) + "}");
+        console.log("✅ Erfolgreich mit der Datenbank verbunden!");
+        return db;
+    } catch (error) {
+        console.error("❌ Fehler bei der DB-Verbindung:", error.message);
+        process.exit(1);
+    }
 };
+
 
 
 // Funktion zum Speichern eines Projekts
