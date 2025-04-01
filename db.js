@@ -3,23 +3,27 @@ const dotenv = require('dotenv');
 
 dotenv.config();
 
-const DATABASE_URL = process.env.DATABASE_URL;
+const connection = mysql.createConnection(process.env.DATABASE_URL);
 
-// Erstelle die DB-Verbindung
+let dbConnection; // Globale Variable für die Verbindung
+
+// DB-Verbindung initialisieren (nur einmal)
 const createDBConnection = async () => {
+    if (dbConnection) return dbConnection; // Falls bereits verbunden, diese Verbindung nutzen
+
     try {
-        const db = await mysql.createConnection(DATABASE_URL + "?ssl={" + JSON.stringify({
-            rejectUnauthorized: true
-        }) + "}");
+        dbConnection = await mysql.createConnection({
+            uri: process.env.DATABASE_URL,
+            ssl: { rejectUnauthorized: true }
+        });
+
         console.log("✅ Erfolgreich mit der Datenbank verbunden!");
-        return db;
+        return dbConnection;
     } catch (error) {
         console.error("❌ Fehler bei der DB-Verbindung:", error.message);
         process.exit(1);
     }
 };
-
-
 
 // Funktion zum Speichern eines Projekts
 const saveProject = async (projectData) => {
@@ -113,5 +117,6 @@ module.exports = {
     saveProject, 
     updateProject,
     getProjects,
-    deleteProject
+    deleteProject,
+    createDBConnection
 };
