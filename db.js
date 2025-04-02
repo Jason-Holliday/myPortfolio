@@ -7,11 +7,13 @@ let dbConnection; // Globale Variable für die Verbindung
 
 // DB-Verbindung initialisieren (nur einmal)
 const createDBConnection = async () => {
-    if (dbConnection) return dbConnection; // Falls bereits verbunden, diese Verbindung nutzen
-
     try {
         dbConnection = await mysql.createConnection({
-            uri: process.env.DATABASE_URL,
+            host: process.env.MYSQL_HOST,
+            user: process.env.MYSQL_USER,
+            password: process.env.MYSQL_PASSWORD,
+            database: process.env.MYSQL_DATABASE,
+            port: process.env.DB_PORT,
             ssl: { rejectUnauthorized: true }
         });
 
