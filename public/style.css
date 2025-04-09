@@ -815,6 +815,11 @@ footer .copyrifht {
         transition: color 0.3s ease;
     }
 
+    .profile-image{
+        width: 200px; 
+        height: 300px; 
+    }
+
     .navLinks.active {
         display: flex;
     }
@@ -851,15 +856,6 @@ footer .copyrifht {
         flex-direction: column;
         gap: 1.5rem;
     }
-
-    .home img{
-        width: 20vw;
-        border-radius: 50%;
-        object-fit: cover;
-        border: 2px solid #fff;
-    }
-
-
 
 
     .infoBox {
@@ -959,12 +955,12 @@ footer .copyrifht {
 }
 
 @media (max-width: 425px) {
+    .name {
+        font-size: 2.5rem; 
+    }
 
-    .home img{
-        width: 35vw;
-        border-radius: 50%;
-        object-fit: cover;
-        border: 2px solid #fff;
+    .jobName {
+        font-size: 1.5rem; 
     }
 
     /* About Section */
@@ -1086,11 +1082,9 @@ footer .copyrifht {
         color: var(--cta-btn); 
     }
 
-    .home img{
-        width: 30vw;
-        border-radius: 50%;
-        object-fit: cover;
-        border: 2px solid #fff;
+    .profile-image{
+        width: 100px; 
+        height: 150px; 
     }
 
     .aboutContainer{
@@ -1111,12 +1105,13 @@ footer .copyrifht {
         }
     
         .name {
-            font-size: 2.5rem; 
+            font-size: 2rem; 
         }
     
         .jobName {
-            font-size: 1.5rem; 
+            font-size: 1rem; 
         }
+
         .btnGroup {
             display: flex; 
             flex-direction: column; 

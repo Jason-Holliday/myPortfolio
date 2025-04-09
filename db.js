@@ -17,8 +17,6 @@ const createDBConnection = async () => {
         });
 
         console.log("✅ Erfolgreich mit der Datenbank verbunden!");
-        const [rows] = await connection.execute("SHOW TABLES;");
-        console.log("📂 Tabellen:", rows);
         return dbConnection;
     } catch (error) {
         console.error("❌ Fehler bei der DB-Verbindung:", error.message);
@@ -118,6 +116,5 @@ module.exports = {
     saveProject, 
     updateProject,
     getProjects,
-    deleteProject,
-    createDBConnection
+    deleteProject
 };
