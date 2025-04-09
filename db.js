@@ -1,5 +1,6 @@
-const mysql = require('mysql2/promise');
 const dotenv = require('dotenv');
+const { Pool } = require('pg');
+
 
 dotenv.config();
 
