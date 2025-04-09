@@ -120,7 +120,7 @@ async function loadProjects() {
     }
 
     try {
-        const response = await fetch("http://localhost:3000/projects", {
+        const response = await fetch("https://myportfolio-production-f41c.up.railway.app/projects", {
             method: "GET",
             headers: {
                 "Content-Type": "application/json"
@@ -176,7 +176,7 @@ function initializeForm(formSelector) {
         const data = Object.fromEntries(formData); // Konvertiert FormData in ein JSON-Objekt
 
         try {
-            const response = await fetch("http://localhost:3000/send-email", {
+            const response = await fetch("https://myportfolio-production-f41c.up.railway.app/send-email", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"  // Erzwinge JSON-Format
