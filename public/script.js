@@ -110,11 +110,6 @@ function initializeModal() {
 }
 
 
-// Dynamisch die API-URL je nach Umgebung setzen
-const API_BASE_URL = location.hostname === "localhost"
-  ? "http://localhost:3000"
-  : "https://myportfolio-jason-holliday.up.railway.app";
-
 // Funktion zum Laden der Projekte
 async function loadProjects() {
     const projectContainer = document.getElementById("project-grid");
@@ -125,7 +120,7 @@ async function loadProjects() {
     }
 
     try {
-        const response = await fetch(`${API_BASE_URL}/projects`, {
+        const response = await fetch("http://localhost:3000/projects", {
             method: "GET",
             headers: {
                 "Content-Type": "application/json"
