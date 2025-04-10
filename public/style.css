@@ -847,9 +847,7 @@ footer .copyrifht {
     }
 
     .home {
-        flex-direction: column; 
         padding: 3rem 1.5rem;
-        gap: 2rem;
     }
 
     .home .homeContainer {
@@ -955,12 +953,37 @@ footer .copyrifht {
 }
 
 @media (max-width: 425px) {
+
+
+    section {
+        padding: 4rem 1rem;
+    }
+
+    .navLinks li {
+        margin-top: 1rem;
+        padding: .5rem;
+    }
+
+    .navLinks li a {
+        font-size: 14px; 
+    }
+
+    .home .homeContainer {
+        flex-direction: column; 
+        gap: 2rem; 
+    }
+
+    .profile-image {
+        width: 150px;
+        height: auto;
+    }
+
     .name {
         font-size: 2.5rem; 
     }
 
     .jobName {
-        font-size: 1.5rem; 
+        font-size: 1rem; 
     }
 
     /* About Section */
